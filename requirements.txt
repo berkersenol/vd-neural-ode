@@ -1,0 +1,42 @@
+# =============================================================================
+# VD Neural ODE -- Package Requirements
+# Candidate: Berker Senol | Technical Assignment
+# =============================================================================
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# Python version required: 3.10 or 3.11 (recommended)
+# These versions are tested against the pinned package versions below.
+#
+# If you are on Windows and torch gives an error, use the CPU-specific index:
+#   pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt --ignore-requires-python
+#
+# =============================================================================
+
+# Numerical computing
+numpy==1.26.4
+
+# Data loading and CSV export
+pandas==2.2.2
+
+# Excel file reading (used by pandas.read_excel for the S45C datasets)
+openpyxl==3.1.5
+
+# Scientific computing: ODE solver (solve_ivp), curve fitting (curve_fit)
+scipy==1.13.1
+
+# R-squared metric
+scikit-learn==1.5.1
+
+# Plotting
+matplotlib==3.9.2
+
+# Neural ODE -- core deep learning framework
+# CPU-only version (no CUDA required, works on any laptop)
+torch==2.4.1
+
+# Neural ODE ODE solver (torchdiffeq wraps torch for ODE integration)
+# Must be installed AFTER torch
+torchdiffeq==0.2.3

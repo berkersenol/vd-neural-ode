@@ -1,0 +1,49 @@
+# =============================================================================
+# VD Neural ODE -- Conda Environment
+# Candidate: Berker Senol 
+# =============================================================================
+#
+# Create and activate the environment with:
+#   conda env create -f environment.yml
+#   conda activate vd_neural_ode
+#
+# To remove the environment later:
+#   conda deactivate
+#   conda env remove -n vd_neural_ode
+#
+# =============================================================================
+
+name: vd_neural_ode
+
+channels:
+  - pytorch          # official PyTorch channel -- always use this for torch
+  - conda-forge      # community packages: scipy, matplotlib, pandas, etc.
+  - defaults
+
+dependencies:
+  # Python version
+  - python=3.11
+
+  # Numerical computing
+  - numpy=1.26.4
+  - scipy=1.13.1
+
+  # Data handling
+  - pandas=2.2.2
+  - openpyxl=3.1.5
+
+  # Machine learning utilities
+  - scikit-learn=1.5.1
+
+  # Plotting
+  - matplotlib=3.9.2
+
+  # PyTorch -- CPU version (no GPU required)
+  # If you have a CUDA GPU, replace cpuonly with pytorch-cuda=12.1
+  - pytorch=2.4.1
+  - cpuonly
+
+  # pip-only packages (not available on conda channels)
+  - pip
+  - pip:
+    - torchdiffeq==0.2.3
